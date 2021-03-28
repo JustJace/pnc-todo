@@ -7,7 +7,7 @@
           <ion-input [(ngModel)]='taskName' (keyup.enter)='create()' placeholder='Enter a task' autofocus></ion-input>
         </ion-item>
       </ion-card-header>
-      <ion-card-content>
+      <ion-card-content *ngIf='tasks.length'>
         <ion-list>
           <app-task *ngFor='let task of tasks' [task]='task' (deleted)='delete(task)'></app-task>
         </ion-list>
