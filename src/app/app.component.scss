@@ -5,16 +5,18 @@ ion-card {
     right: 0;
     top: 30px;
     margin: auto;
+    transition: 0.5s ease-in-out;
 
     @media only screen and (max-width: 400px) {
         max-width: 100%;
         left: 10px;
         right: 10px;
+        transition: 0.5s ease-in-out;
     }
 }
 
 ion-card-header {
-    background-color: #efefef;
+    background-color: #fefefe;
     padding: 20px;
 }
 
@@ -22,4 +24,17 @@ ion-card-title {
     text-align: center;
     margin-bottom: 20px;
     font-size: 40px;
+}
+
+ion-content {
+    --background: #efefef; // Replace this with color of your choice
+    border-left: 50px solid #333;
+    border-right: 50px solid #333;
+    transition: 0.5s ease-in-out;
+
+    @media only screen and (max-width: 510px) {
+        border-left: 5px solid #333;
+        border-right: 5px solid #333;
+        transition: 0.5s ease-in-out;
+    }
 }
