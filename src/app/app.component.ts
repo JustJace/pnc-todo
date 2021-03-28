@@ -8,7 +8,7 @@ import { Task } from './task/task';
 })
 export class AppComponent {
   public taskName?: string;
-  public tasks: {[name:string] : Task} = {};
+  public tasks: Task[] = [];
   
   public create(): void {
     if (!this.taskName?.trim()) return;
@@ -17,14 +17,16 @@ export class AppComponent {
       name: this.taskName.trim(),
       completed: false
     };
+    
+    this.tasks.push(task);
 
-    if (this.tasks[task.name]) return;
-
-    this.tasks[task.name] = task;
     delete this.taskName;
   }
 
   public delete(task: Task): void {
-    delete this.tasks[task.name];
+    const index = this.tasks.indexOf(task, 0);
+    if (index >= 0) {
+      this.tasks.splice(index, 1);
+    }
   }
 }

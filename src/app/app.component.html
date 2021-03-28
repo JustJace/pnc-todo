@@ -9,7 +9,7 @@
       </ion-card-header>
       <ion-card-content>
         <ion-list>
-          <app-task *ngFor='let kvp of tasks | keyvalue' [task]='kvp.value' (deleted)='delete(kvp.value)'></app-task>
+          <app-task *ngFor='let task of tasks' [task]='task' (deleted)='delete(task)'></app-task>
         </ion-list>
       </ion-card-content>
     </ion-card>
