@@ -1,0 +1,9 @@
+<div *ngIf='task' id='item-container'>
+    <ion-item>
+        <ion-checkbox slot='start' [(ngModel)]='task.completed'></ion-checkbox>
+        <ion-label [class.complete]='task.completed'>{{ task.name }}</ion-label>
+    </ion-item>
+    <ion-button slot='end' color='danger' (click)='delete()'>
+        <ion-icon slot='icon-only' name='trash-sharp'></ion-icon>
+    </ion-button>
+</div>

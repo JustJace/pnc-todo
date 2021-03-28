@@ -1,0 +1,20 @@
+ion-checkbox {
+    margin-right: 20px;
+}
+
+#item-container {
+    display: flex;
+    align-items: center;
+}
+
+ion-item {
+    flex-grow: 1;
+    margin-right: 20px;
+}
+
+.complete {
+    opacity: 0.666;
+    color: #666;
+    text-decoration: line-through;
+    transition: 0.25s ease-in;
+}
