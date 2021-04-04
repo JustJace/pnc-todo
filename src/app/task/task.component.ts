@@ -10,6 +10,7 @@ export class TaskComponent implements OnInit {
 
   @Input() public task?: Task;
   @Output() public deleted: EventEmitter<void> = new EventEmitter();
+  @Output() public updated: EventEmitter<void> = new EventEmitter();
 
   constructor() { }
 
@@ -18,5 +19,9 @@ export class TaskComponent implements OnInit {
 
   public delete(): void {
     this.deleted.emit();
+  }
+
+  public update(): void {
+    this.updated.emit();
   }
 }

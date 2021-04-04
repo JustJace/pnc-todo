@@ -1,16 +1,36 @@
 <ion-app>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title color='primary'>TODO</ion-title>
+      <ion-chip slot='end' *ngIf='signedInUser$ | async as user' (click)='signOut()'>
+        <ion-avatar>
+          <img [src]='user.photoURL' />
+        </ion-avatar>
+        <ion-label>{{ user.displayName }}</ion-label>
+        <ion-icon name="log-out-sharp"></ion-icon>
+      </ion-chip>
+    </ion-toolbar>
+  </ion-header>
   <ion-content fullscreen>
-    <ion-card>
+    <ion-card *ngIf='signedInUser$ | async'>
       <ion-card-header>
-        <ion-card-title color='primary'>TODO</ion-card-title>
         <ion-item>
           <ion-input [(ngModel)]='taskName' (keyup.enter)='create()' placeholder='Enter a task' autofocus></ion-input>
         </ion-item>
       </ion-card-header>
-      <ion-card-content *ngIf='tasks.length'>
+      <ion-card-content>
         <ion-list>
-          <app-task *ngFor='let task of tasks' [task]='task' (deleted)='delete(task)'></app-task>
+          <app-task *ngFor='let task of tasks$ | async' 
+                    [task]='task' 
+                    (deleted)='delete(task)'
+                    (updated)='update(task)'>
+          </app-task>
         </ion-list>
+      </ion-card-content>
+    </ion-card>
+    <ion-card *ngIf='!(signedInUser$ | async)'>
+      <ion-card-content id='google-button-container'>
+        <img id='google-button' src='../assets/btn_google_signin_light_normal_web.png' (click)='signInWithGoogle()'>
       </ion-card-content>
     </ion-card>
   </ion-content>
