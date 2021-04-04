@@ -10,15 +10,12 @@ import firebase from 'firebase/app';
 })
 export class HeaderComponent implements OnInit {
 
-  public signedInUser$!: Observable<firebase.User | null>;
-
-  constructor(private readonly _auth: AuthService) { }
+  constructor(public readonly auth: AuthService) { }
 
   ngOnInit(): void {
-    this.signedInUser$ = this._auth.signedInUser();
   }
 
   public async signOut(): Promise<void> {
-    await this._auth.signOut();
+    await this.auth.signOut();
   }
 }

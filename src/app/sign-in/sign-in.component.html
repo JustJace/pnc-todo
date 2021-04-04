@@ -1,0 +1,5 @@
+<ion-card *ngIf='!(auth.signedInUser$ | async)'>
+    <ion-card-content id='google-button-container'>
+        <img id='google-button' src='../assets/btn_google_signin_light_normal_web.png' (click)='signInWithGoogle()'>
+    </ion-card-content>
+</ion-card>

@@ -1,7 +1,7 @@
 <ion-header>
     <ion-toolbar>
         <ion-title color='primary'>TODO</ion-title>
-        <ion-chip slot='end' *ngIf='signedInUser$ | async as user' (click)='signOut()'>
+        <ion-chip slot='end' *ngIf='auth.signedInUser$ | async as user' (click)='signOut()'>
             <ion-avatar>
                 <img [src]='user.photoURL' />
             </ion-avatar>

@@ -10,6 +10,8 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { HeaderComponent } from './header/header.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { TaskListComponent } from './task-list/task-list.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDMUaNWe2OFxJbDu4xY4tpyX02C_lwxJ5U",
@@ -24,7 +26,9 @@ const firebaseConfig = {
   declarations: [
     AppComponent,
     TaskComponent,
-    HeaderComponent
+    HeaderComponent,
+    SignInComponent,
+    TaskListComponent
   ],
   imports: [
     BrowserModule,

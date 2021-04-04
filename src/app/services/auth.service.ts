@@ -11,9 +11,7 @@ export class AuthService {
 
   constructor(private readonly afAuth: AngularFireAuth) { }
 
-  public signedInUser(): Observable<firebase.User | null> {
-    return this.afAuth.authState;
-  }
+  public signedInUser$: Observable<firebase.User | null> = this.afAuth.authState;
 
   public signInWithGoogle(): Promise<firebase.auth.UserCredential> {
     const provider = new firebase.auth.GoogleAuthProvider();

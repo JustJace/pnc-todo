@@ -1,26 +1,12 @@
 <ion-app>
   <app-header></app-header>
   <ion-content fullscreen>
-    <ion-card *ngIf='signedInUser$ | async'>
-      <ion-card-header>
-        <ion-item>
-          <ion-input [(ngModel)]='taskName' (keyup.enter)='create()' placeholder='Enter a task' autofocus></ion-input>
-        </ion-item>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-list>
-          <app-task *ngFor='let task of tasks$ | async; trackBy: taskTrack' 
-                    [task]='task' 
-                    (deleted)='delete(task)'
-                    (updated)='update(task)'>
-          </app-task>
-        </ion-list>
-      </ion-card-content>
-    </ion-card>
-    <ion-card *ngIf='!(signedInUser$ | async)'>
-      <ion-card-content id='google-button-container'>
-        <img id='google-button' src='../assets/btn_google_signin_light_normal_web.png' (click)='signInWithGoogle()'>
-      </ion-card-content>
-    </ion-card>
+    <div id='content-container'>
+      <app-task-list *ngIf='auth.signedInUser$ | async; else sign_in'></app-task-list>
+      <ng-template #sign_in>
+        <app-sign-in>
+        </app-sign-in>
+      </ng-template>
+    </div>
   </ion-content>
 </ion-app>

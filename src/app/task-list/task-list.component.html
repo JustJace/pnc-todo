@@ -1,0 +1,14 @@
+<ion-card>
+    <ion-card-header>
+        <ion-item>
+            <ion-input [(ngModel)]='taskName' (keyup.enter)='create()' placeholder='Enter a task' autofocus></ion-input>
+        </ion-item>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-list>
+            <app-task *ngFor='let task of tasks$ | async; trackBy: taskTrack' [task]='task' (deleted)='delete(task)'
+                (updated)='update(task)'>
+            </app-task>
+        </ion-list>
+    </ion-card-content>
+</ion-card>

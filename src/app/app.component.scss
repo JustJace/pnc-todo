@@ -1,54 +1,26 @@
-ion-card {
-    max-width: 400px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 64px;
-    margin: auto;
-    transition: 0.5s ease-in-out;
-
-    @media only screen and (max-width: 400px) {
-        max-width: 100%;
-        left: 10px;
-        right: 10px;
-        transition: 0.5s ease-in-out;
-    }
-}
-
-ion-card-header {
-    background-color: #fefefe;
-    padding: 20px;
-}
-
-ion-card-title {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 40px;
-    display: flex;
-    justify-items: center;
-    justify-content: space-between;
-}
-
-ion-content {
-    --background: #efefef; // Replace this with color of your choice
+ion-app {
     border-left: 50px solid #333;
     border-right: 50px solid #333;
     transition: 0.5s ease-in-out;
 
-    @media only screen and (max-width: 510px) {
+    @media only screen and (max-width: 720px) {
         border-left: 5px solid #333;
         border-right: 5px solid #333;
         transition: 0.5s ease-in-out;
     }
 }
 
-#google-button {
-    padding: 0;
-    margin: 10px;
-    cursor: pointer;
-}
+#content-container {
+    margin-top: 10px;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
 
-#google-button-container {
-    display: flex;
-    justify-content: space-around;
+    @media only screen and (min-width: 0) and (max-width: 720px) {
+        width: 100%;
+    }
+
+    @media only screen and (min-width: 720px) and (max-width: 1080px) {
+        width: 85%;
+    }
 }
