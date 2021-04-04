@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header mode='md'>
     <ion-toolbar>
         <ion-title color='primary'>TODO</ion-title>
         <ion-chip slot='end' *ngIf='auth.signedInUser$ | async as user' (click)='signOut()'>
