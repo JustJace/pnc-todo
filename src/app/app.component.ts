@@ -59,4 +59,8 @@ export class AppComponent implements OnInit {
   public async signOut(): Promise<void> {
     await this._auth.signOut();
   }
+
+  public taskTrack(index: number, task: Task): string {
+    return task.id!;
+  }
 }

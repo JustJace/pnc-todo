@@ -20,7 +20,7 @@
       </ion-card-header>
       <ion-card-content>
         <ion-list>
-          <app-task *ngFor='let task of tasks$ | async' 
+          <app-task *ngFor='let task of tasks$ | async; trackBy: taskTrack' 
                     [task]='task' 
                     (deleted)='delete(task)'
                     (updated)='update(task)'>
