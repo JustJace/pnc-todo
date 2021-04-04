@@ -10,6 +10,10 @@ ion-app {
     }
 }
 
+ion-content {
+    --background: #efefef;
+}
+
 #content-container {
     margin-top: 10px;
     width: 75%;
