@@ -1,16 +1,5 @@
 <ion-app>
-  <ion-header>
-    <ion-toolbar>
-      <ion-title color='primary'>TODO</ion-title>
-      <ion-chip slot='end' *ngIf='signedInUser$ | async as user' (click)='signOut()'>
-        <ion-avatar>
-          <img [src]='user.photoURL' />
-        </ion-avatar>
-        <ion-label>{{ user.displayName }}</ion-label>
-        <ion-icon name="log-out-sharp"></ion-icon>
-      </ion-chip>
-    </ion-toolbar>
-  </ion-header>
+  <app-header></app-header>
   <ion-content fullscreen>
     <ion-card *ngIf='signedInUser$ | async'>
       <ion-card-header>

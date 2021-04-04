@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
+import { HeaderComponent } from './header/header.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDMUaNWe2OFxJbDu4xY4tpyX02C_lwxJ5U",
@@ -22,7 +23,8 @@ const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    TaskComponent
+    TaskComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

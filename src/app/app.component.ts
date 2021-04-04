@@ -56,10 +56,6 @@ export class AppComponent implements OnInit {
     await this._auth.signInWithGoogle();
   }
 
-  public async signOut(): Promise<void> {
-    await this._auth.signOut();
-  }
-
   public taskTrack(index: number, task: Task): string {
     return task.id!;
   }
