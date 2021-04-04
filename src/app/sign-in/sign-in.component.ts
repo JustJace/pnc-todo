@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoadingController } from '@ionic/angular';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -8,12 +9,17 @@ import { AuthService } from '../services/auth.service';
 })
 export class SignInComponent implements OnInit {
 
-  constructor(public readonly auth: AuthService) { }
+  constructor(public readonly auth: AuthService, private readonly _loading: LoadingController) { }
 
   ngOnInit(): void {
   }
 
   public async signInWithGoogle(): Promise<void> {
+    const loading = await this._loading.create({
+      message: 'Logging In'
+    });
+    await loading.present();
     await this.auth.signInWithGoogle();
+    await loading.dismiss();
   }
 }
