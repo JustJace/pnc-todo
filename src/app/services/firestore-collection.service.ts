@@ -20,11 +20,11 @@ export class FirestoreCollectionService {
   public observe<T extends Identifiable>(path: string, fn?: QueryFn<DocumentData>): Observable<T[]> {
     return this._fsAuth.authState.pipe(
       filter(u => !!u),
-      switchMap(u => this.switchUserForCollection<T>(`${this.collectionPath(u!, path)}`, fn))
+      switchMap(u => this.switchPathForCollection<T>(`${this.collectionPath(u!, path)}`, fn))
     );
   }
 
-  private switchUserForCollection<T extends Identifiable>(path: string, fn?: QueryFn<DocumentData>): Observable<T[]> {
+  private switchPathForCollection<T extends Identifiable>(path: string, fn?: QueryFn<DocumentData>): Observable<T[]> {
     return this._fs
       .collection<T>(path, fn)
       .snapshotChanges()
