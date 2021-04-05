@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
-import { Observable } from 'rxjs';
-import { delay, filter, finalize, map, tap } from 'rxjs/operators';
 import { AuthService } from '../services/auth.service';
-import firebase from 'firebase/app';
 
 @Component({
   selector: 'app-sign-in',
