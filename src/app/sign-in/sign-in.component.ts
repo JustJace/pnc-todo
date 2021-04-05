@@ -12,7 +12,7 @@ import firebase from 'firebase/app';
 })
 export class SignInComponent implements OnInit {
 
-  constructor(private readonly auth: AuthService, private readonly _loading: LoadingController) { }
+  constructor(public readonly auth: AuthService, private readonly _loading: LoadingController) { }
 
   ngOnInit(): void {
   
